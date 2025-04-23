@@ -6,7 +6,8 @@
         "generate:defs": "node --loader @polkadot/dev-ts node_modules/.bin/polkadot-types-from-defs --endpoint metadata.json --package polymesh-types --input ./src/polkadot/",
         "generate:meta": "node --loader @polkadot/dev-ts node_modules/.bin/polkadot-types-from-chain --endpoint metadata.json --package polymesh-types --output ./src/polkadot --strict",
         "generate:consts": "cross-env node scripts/generateConsts.js",
-        "generate:post-process": "cross-env node scripts/postProcessTypes.js"
+        "generate:post-process": "cross-env node scripts/postProcessTypes.js",
+        "demo": "ts-node src/demo.ts"
     },
     "devDependencies": {
         "@polkadot/dev-ts": "^0.79.3",
@@ -14,6 +15,11 @@
         "@polymeshassociation/polymesh-types": "^5.15.0",
         "cross-env": "^7.0.3",
         "replace-in-file": "^6.3.5",
-        "rimraf": "^6.0.1"
+        "rimraf": "^6.0.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3"
+    },
+    "dependencies": {
+        "dotenv": "^16.5.0"
     }
 }
