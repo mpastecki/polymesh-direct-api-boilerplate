@@ -1,4 +1,12 @@
 {
+    "name": "polymesh-direct-api-boilerplate",
+    "version": "0.1.0",
+    "description": "A boilerplate for interacting with the Polymesh blockchain using Polkadot.js API directly",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/polymesh-direct-api-boilerplate.git"
+    },
     "scripts": {
         "generate:polkadot-types": "yarn fetch-metadata && yarn fetch-definitions && yarn generate:defs && yarn generate:meta && yarn generate:consts && yarn generate:post-process",
         "fetch-definitions": "cross-env node scripts/fetchDefinitions.js",
@@ -20,6 +28,7 @@
         "typescript": "^5.8.3"
     },
     "dependencies": {
+        "@polkadot/api": "^15.9.2",
         "dotenv": "^16.5.0"
     }
 }
