@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+      "polymesh-types/*": ["src/polkadot/*"],
+      "@polkadot/api/augment": ["src/polkadot/augment-api.ts"],
+      "@polkadot/types/augment": ["src/polkadot/augment-types.ts"],
+      "@polkadot/types/lookup": ["src/polkadot/types-lookup.ts"]
+    },
+    "useUnknownInCatchVariables": false,
+    "noImplicitOverride": true,
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "lib": ["es2017", "dom"],
+    "typeRoots": ["./node_modules/@types", "./src/typings"]
+  },
+  "exclude": ["dist", "node_modules", "sandbox.ts", "test.ts"]
+}

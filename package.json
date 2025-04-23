@@ -1,0 +1,19 @@
+{
+    "scripts": {
+        "generate:polkadot-types": "yarn fetch-metadata && yarn fetch-definitions && yarn generate:defs && yarn generate:meta && yarn generate:consts && yarn generate:post-process",
+        "fetch-definitions": "cross-env node scripts/fetchDefinitions.js",
+        "fetch-metadata": "sh scripts/fetchMetadata.sh",
+        "generate:defs": "node --loader @polkadot/dev-ts node_modules/.bin/polkadot-types-from-defs --endpoint metadata.json --package polymesh-types --input ./src/polkadot/",
+        "generate:meta": "node --loader @polkadot/dev-ts node_modules/.bin/polkadot-types-from-chain --endpoint metadata.json --package polymesh-types --output ./src/polkadot --strict",
+        "generate:consts": "cross-env node scripts/generateConsts.js",
+        "generate:post-process": "cross-env node scripts/postProcessTypes.js"
+    },
+    "devDependencies": {
+        "@polkadot/dev-ts": "^0.79.3",
+        "@polkadot/typegen": "^15.9.2",
+        "@polymeshassociation/polymesh-types": "^5.15.0",
+        "cross-env": "^7.0.3",
+        "replace-in-file": "^6.3.5",
+        "rimraf": "^6.0.1"
+    }
+}
